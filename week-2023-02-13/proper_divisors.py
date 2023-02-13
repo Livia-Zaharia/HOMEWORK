@@ -11,11 +11,10 @@
 
 def proper(no:int)->list:
     divisors=[]
-    div=no-1
-    while div >0:
-        if no%div == 0:
-            divisors.append(div)
-        div=div-1
+    for i in range (1,(no//2)+1):
+        if no%i == 0:
+            divisors.append(i)
+    
      
     return divisors
 

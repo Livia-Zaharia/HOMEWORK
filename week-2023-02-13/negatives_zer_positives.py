@@ -27,12 +27,15 @@ def reading_list():
 
 
 def main():
-    global no_list_neg, no_list_positive, no_zero
+    global no_list_neg, no_list_positive, no_zero, merged_list
     no_list_neg = []
     no_list_positive = []
     no_zero = []
+    merged_list=[]
     reading_list()
-    print(no_list_neg+no_zero+no_list_positive)
+    merged_list=no_list_neg+no_zero+no_list_positive
+    for elem in merged_list:
+        print(elem)
 
 if __name__ == "__main__":
     main()
