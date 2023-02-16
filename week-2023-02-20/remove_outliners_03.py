@@ -13,22 +13,39 @@ list. Your program should generate an appropriate error message if the user ente
 
 """
 
+import copy
 
+def check_and_eliminate():
+    if len (no_list)<=2*no_elements:
+        return False
+    else:
+        global no_list_copy
+        no_list_copy=copy.copy(no_list)
+        no_list_copy.sort()
+        no_list_copy=no_list_copy[no_elements:-no_elements]
+        return True
 
-def read_write():
-    global word_list
-    word_list=[]
+def read():
+    global no_list
+    no_list=[]
     while True:
-        word=input("New word you want in: ")
-        if word=="":
+        no=input("New value you want in: ")
+        if no=="":
             break
-        if check_not_exist(word):
-            word_list.append(word)
+        no_list.append(int(no))
 
 def main():
-    read_write()
-    for element in word_list:
-        print(element)
+    read()
+    global no_elements
+    no_elements=int(input("How many outliners to be removed: "))
+    if check_and_eliminate():
+        for element in no_list_copy:
+            print(element)
+        print("+++++++++++++++")
+        for element in no_list:
+            print(element)
+    else:
+        print("List was too short")
 
 if __name__=="__main__":
     main()
