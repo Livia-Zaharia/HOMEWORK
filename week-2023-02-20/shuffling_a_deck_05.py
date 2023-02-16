@@ -19,3 +19,46 @@ to create a main program that displays a deck of cards before and after it has b
 Hint: https://www.w3schools.com/python/ref_random_shuffle.asp
 
 """
+
+import random
+import copy
+
+def create_deck():
+    list_numbers=[]
+    for i in range(2,10):
+        list_numbers.append(str(i))
+    list_special_case=["T", "J", "Q", "K", "A"]
+    list_numbers.extend(list_special_case)
+    
+    global complete_deck
+    complete_deck=[]
+
+    list_packs=["s","h","d","c"]
+    for pack in list_packs:
+        for elem in list_numbers:
+            complete_deck.append(pack+elem)
+
+    print("Original deck")
+    nice_output(complete_deck)
+
+
+
+
+def shuffle_deck():
+    shuffled_deck=copy.deepcopy(complete_deck)
+    random.shuffle(shuffled_deck)
+    print("After shuffle")
+    nice_output(shuffled_deck)
+
+def nice_output(misc_list):
+    
+    for elem in misc_list:
+        print(elem)
+
+def main():
+    create_deck()
+    shuffle_deck()
+    
+
+if __name__=="__main__":
+    main()
