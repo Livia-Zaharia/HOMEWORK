@@ -10,19 +10,43 @@ Hint: Store the supplied values for environments and endpoints as lists and use 
 to iterate all combinations. Don't forget to read from user's input for the access token value.
 
 """
+def format_string(access_token, enviornment_list, endpoint_list):
+    sf_list=[]
+
+    for envi in enviornment_list:
+       for endpoint in endpoint_list:
+           sf_list.append('https://{envi}.happyapi.com/{endpoint}?access_token={access_token}'.format(envi=envi, endpoint=endpoint, access_token=access_token))
+    
+    return sf_list
+
+
+
+def f_string_method(access_token, enviornment_list, endpoint_list):
+    s_list=[]
+
+    for envi in enviornment_list:
+        for endpoint in endpoint_list:
+            s_list.append(f'https://{envi}.happyapi.com/{endpoint}?access_token={access_token}')
+    
+    return s_list
+
 
 def main():
-    read()
-    global no_elements
-    no_elements=int(input("How many outliners to be removed: "))
-    if check_and_eliminate():
-        for element in no_list_copy:
-            print(element)
-        print("+++++++++++++++")
-        for element in no_list:
-            print(element)
-    else:
-        print("List was too short")
+    
+    enviornment_list=["production", "staging", "development", "sandbox"]
+    endpoint_list=["orders", "transactions", "balance", "store"]
+    access_token= input("give access_token: ")
+        
+    print ("OUTPUT from f-string mode")
+
+    for elem in f_string_method(access_token, enviornment_list, endpoint_list):
+        print (elem)
+
+    print ("OUTPUT from format")
+
+    for elem in format_string(access_token, enviornment_list, endpoint_list):
+        print (elem)
+  
 
 if __name__=="__main__":
     main()
