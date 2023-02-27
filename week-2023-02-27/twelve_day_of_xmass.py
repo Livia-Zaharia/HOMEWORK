@@ -49,7 +49,21 @@ import ordinal_name
 
 def gift_calling(number:int)->str:
     return_gifts=[]
-    gifts=["A partridge in a pear tree","Two turtle doves","Three French hens","Four calling birds","Five golden rings","Six geese a-laying","Seven swans a-swimming","Eight maids a-milking","Nine ladies dancing","Ten lords a-leaping","Eleven pipers piping","Twelve drummers drumming"]
+    gifts=[
+        "A partridge in a pear tree"
+        ,"Two turtle doves"
+        ,"Three French hens"
+        ,"Four calling birds"
+        ,"Five golden rings"
+        ,"Six geese a-laying"
+        ,"Seven swans a-swimming"
+        ,"Eight maids a-milking"
+        ,"Nine ladies dancing"
+        ,"Ten lords a-leaping"
+        ,"Eleven pipers piping"
+        ,"Twelve drummers drumming"
+    ]
+    
     for i in range((number-1),0,-1) :
         return_gifts.append(gifts[i])
     return_gifts.append("a partridge in a pear tree")
@@ -64,9 +78,8 @@ def gift_calling(number:int)->str:
     
 def verse_forming(number:int)->str:
     day_number=ordinal_name.ordinal_name(number)
-    space='\n'
     gifts=gift_calling(number)
-    base_call=f"On the {day_number} day of Christmas{space}My true love sent to me{space}{gifts}"
+    base_call=f"On the {day_number} day of Christmas\nMy true love sent to me\n{gifts}"
     song_lyrics.append(base_call)
 
 
