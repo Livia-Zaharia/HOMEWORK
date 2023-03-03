@@ -11,6 +11,23 @@ letters or numbers. The Morse code for Hello, World! is shown below:
 .... . .-.. .-.. --- .-- --- .-. .-.. -..
 
 """
+
+
+def decoding_morse(mess):
+    letters=mess.split()
+    new_normal_text=[]
+    for letter in letters:
+        new_normal_text.append(reverse_morse_dict[letter])
+    print (''.join(new_normal_text))
+
+def reversed_morse():
+    global reverse_morse_dict
+    reverse_morse_dict={}
+    for letter in morse_dict.items():
+        
+        reverse_morse_dict[letter[1]]=letter[0]
+
+
 def to_morse(words):
     morse_message=[]
     for word in words:
@@ -19,9 +36,6 @@ def to_morse(words):
     
     morse=" ".join(morse_message)
     print(morse)
-
-    # for morse in morse_message:
-    #     print(morse)
 
 
 def string_prep(text):
@@ -56,7 +70,15 @@ def main():
    message=input("Your message please: ")
 
    string_prep(message)
-   
+
+   continue_on=input("Do you want to decode something? Y/N:")
+   if continue_on.upper()=="Y":
+       coded_message=input("what is the coded message?")
+       reversed_morse()
+       
+       decoding_morse(coded_message)
+
+       
 
 if __name__=="__main__":
     main()
