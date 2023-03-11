@@ -13,6 +13,8 @@ returns multiple keys, a single key, and no keys.
 def reverse_lookup(dict_to_check,value):
     return_values=[]
     for item in dict_to_check.items():
+        print(dict_to_check.items())
+        print(dict_to_check.values())
         if item[1]==value:
             return_values.append(item[0])
     return return_values
