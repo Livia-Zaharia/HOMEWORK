@@ -23,19 +23,18 @@ def write_no(no_i:int):
         17:"seventeen", 18:"eighteen", 19:"nineteen"
     }
 
-    if len(str(no_i))==3:
-        if (no_i//10)%10==1:
+    if len(str(no_i))==1 or (len(str(no_i))==2 and (no_i//10)%10==1) or (len(str(no_i))==2 and (no_i%10==0)):
+        return simple_dict[no_i]
+    elif len(str(no_i))==2:
+        return(f"{simple_dict[((no_i//10)%10)*10]}{simple_dict[(no_i%10)]}")
+    else:
+        if no_i%100==0:
+            return(f"{simple_dict[no_i//100]} hundred")
+        elif no_i%10==0 or (no_i%100)//10==1 or (no_i%100)//10==0:
             return(f"{simple_dict[no_i//100]} hundred {simple_dict[(no_i%100)]}")
         else:
-            return(f"{simple_dict[no_i//100]} hundred {simple_dict[((no_i//10)%10)*10]}{simple_dict[(no_i%10)]}")
-    elif len(str(no_i))==2:
-        if (no_i//10)%10==1:
-            return(f"{simple_dict[(no_i%100)]}")
-        else:
-            return(f"{simple_dict[((no_i//10)%10)*10]}{simple_dict[(no_i%10)]}")
-    else:
-        return(f"{simple_dict[no_i]}")
-        
+            return(f"{simple_dict[no_i//100]} hundred {simple_dict[((no_i//10)%10)*10]}{simple_dict[(no_i%10)]}")  
+    
 
 def main():
    no=int(input("Your amount to be spelled please: "))
