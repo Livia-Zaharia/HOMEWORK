@@ -21,22 +21,20 @@ def most_repeating_word(word_list:list)->str:
         values.sort()
         highest_no_of_letters_list.append(values[-1])
     
-    position=[]
+    position_word=[]
     max_appeareances=max(highest_no_of_letters_list)
 
     for i, appearances in enumerate(highest_no_of_letters_list):
         if appearances==max_appeareances:
-            position.append(i)
+            position_word.append(word_list[i])
     
-    print(f"there were {len(position)} words with {max_appeareances} of letters such as")
 
-    for j, word in enumerate(word_list):
-        if j in position:
-            print (word)
+    print(f"there were {len(position_word)} words with {max_appeareances} max apperances of letters such as {' '.join(position_word)}")
 
+    
 
 def string_prep(text):
-    text=text.upper()
+    text=text.lower()
     words=[]
     new_words=[]
     words=text.split()

@@ -1,5 +1,14 @@
 
+"""
+1. Ubbi Dubbi1
+: In Ubbi Dubbi, every vowel (a, e, i, o, or u) is prefaced with ub. Thus milk
+becomes mubilk (m-ub-ilk) and program becomes prubogrubam (prub-ogrub-am). For this
+exercise, you’ll write a function (called ubbi_dubbi ) that takes a single word (string) as an
+argument. It returns a string, the word’s translation into Ubbi Dubbi. So if the function is
+called with octopus , the function will return the string uboctubopubus . And if the user
+passes the argument elephant , you’ll output ubelubephubant .
 
+"""
 
 def ubbi_dubbi_translate(word:str)->str:
     vowels="aeiou"
