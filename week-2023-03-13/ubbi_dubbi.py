@@ -10,6 +10,8 @@ passes the argument elephant , you’ll output ubelubephubant .
 
 """
 
+# could have been written using replace method of strings.
+
 def ubbi_dubbi_translate(word:str)->str:
     vowels="aeiou"
     word.lower()
