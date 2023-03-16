@@ -19,9 +19,9 @@ def main():
    if p in p0.glob("*"):
     
         
-        file_obj=open(p,"r")
-        lines_raw=file_obj.read()
-        file_obj.close()
+        with open(p,"r") as file_obj:
+           lines_raw=file_obj.read()
+        
 
         no_lines_infile=lines_counting(lines_raw)
 
