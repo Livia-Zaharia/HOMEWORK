@@ -26,7 +26,7 @@ def main():
 
         with open(p2,"w",) as file_obj2:
            for index,line in enumerate(text_lines):
-            file_obj2.write(f"{index}, {line}'\n'")
+            file_obj2.write(f"{index}, {line}\n")
           
 
 
