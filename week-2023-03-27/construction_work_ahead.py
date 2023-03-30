@@ -105,7 +105,7 @@ def main():
 
 
    
-   grouped_list_y=group_all_data_by_attribute(data,"years_of experience")
+   grouped_list_y=group_all_data_by_attribute(data,"years_of_experience")
    
    for item in grouped_list_y:
       print(item)
