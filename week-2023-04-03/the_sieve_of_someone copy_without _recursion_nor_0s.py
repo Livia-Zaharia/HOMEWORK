@@ -24,3 +24,34 @@ algorithm correctly you should be able to display all of the prime numbers less 
 1,000,000 in a few seconds.
 
 """
+
+
+def sieve( no:int,p:int)->list:
+    
+    for item in data[p:]:
+        if item%p==0 and item!=p:
+            data.remove(item)
+    
+    return
+
+
+
+def main():
+    global data
+    data=[]
+    no= int(input(" you want the first... prime numbers"))
+    for i in range(no):
+        data.append(i)
+    
+    p=2
+
+    while p<no:
+        sieve(no,p)
+        p+=1
+    data=set(data)
+    print(data)
+
+
+
+if __name__=="__main__":
+    main()

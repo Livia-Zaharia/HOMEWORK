@@ -12,3 +12,43 @@ should return True if and only if smaller is a sublist of larger. Write a main p
 demonstrates your function.
 
 """
+import random
+
+
+def is_sublist(larger:list, smaller:list)->bool:
+    A=""
+    B=""
+   
+    for item in larger:
+        A+=str(item)
+        A+="."
+
+    for item in smaller:
+        B+=str(item)
+        B+="."
+
+    if A.find(B)!=-1:
+        return True
+    return False
+
+
+def main():
+    data_int=[]
+    for i in range(100):
+        data_int.append(i)
+
+    data=random.sample(data_int,10)
+    
+    for i in data:
+        print(i)
+    
+    to_check=[]
+    for i in range(4):
+         to_check.append(int(input("no in list to check ")))
+        
+    print(is_sublist(data,to_check))
+
+                
+
+if __name__=="__main__":
+    main()
