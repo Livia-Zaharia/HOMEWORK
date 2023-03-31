@@ -24,7 +24,7 @@ algorithm correctly you should be able to display all of the prime numbers less 
 1,000,000 in a few seconds.
 
 """
-
+import math
 
 def sieve( no:int,p:int)->list:
     
@@ -44,7 +44,8 @@ def main():
         data.append(i)
     
     p=2
-    while p<no:
+    limit=math.sqrt(no)+1
+    while p<limit:
         sieve(no,p)
         p+=1
 

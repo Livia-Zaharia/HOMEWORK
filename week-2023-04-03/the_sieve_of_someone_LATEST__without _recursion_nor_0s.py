@@ -24,13 +24,15 @@ algorithm correctly you should be able to display all of the prime numbers less 
 1,000,000 in a few seconds.
 
 """
+import math
 
 
 def sieve( no:int,p:int)->list:
     
     for item in data[p:]:
         if item%p==0 and item!=p:
-            data.remove(item)
+            del data[data.index(item)]
+            # data.remove(item)
     
     return
 
@@ -44,11 +46,18 @@ def main():
         data.append(i)
     
     p=2
+    limit=math.sqrt(no)+1
 
-    while p<no:
+    while p<limit:
+        index=data.index(p)
         sieve(no,p)
-        p+=1
-    data=set(data)
+        if data.index(p)==len(data)-1:
+            break
+        if data.index(p)!=ValueError: 
+            p=data[data.index(p)+1]
+        else:
+            p=data[index]
+    
     print(data)
 
 
